@@ -1,0 +1,21 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: node
+    tag: latest
+
+inputs:
+  - name: agn-source-code
+  - name: dependency-cache
+outputs:
+  - name: agn-ui
+
+run:
+  path: /bin/sh
+  args: ["agn-source-code/ci/scripts/build.sh"]
+  #path:  agn-ui/ci/scripts/build.sh
+
+  

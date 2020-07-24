@@ -1,0 +1,9 @@
+---
+applications:
+- name: agn-ui
+  command: npm run start:prod
+  buildpack: nodejs_buildpack
+  instances: 1
+  memory: 1G
+  route: agn.platform.mck.com
+  stack: cflinuxfs3

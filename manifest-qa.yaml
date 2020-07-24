@@ -1,0 +1,11 @@
+---
+applications:
+- name: agn-qa
+  command: npm run start:qa
+  buildpack: nodejs_buildpack
+  instances: 1
+  memory: 1G
+  stack: cflinuxfs3
+  routes:
+  - route: agn-qa.app.dev-west.paas.mck.com
+           

@@ -1,0 +1,49 @@
+{
+    "qa": {
+        "config_id": "QA",
+        "app_name": "agn-ui-qa",
+        "client_id":"d507b538-8dfc-4165-8a94-b3d6c70f9cef",
+        "client_secret":"656d5309-17d4-4391-bd96-fe8b2b8b9874",
+        "AZURE_TENANT_ID":"da67ef1b-ca59-4db2-9a8c-aa8d94617a16",
+        "AZURE_CLIENT_ID": "55d0caf2-a6de-4e3d-a33a-59ba03921013",
+        "AZURE_CLIENT_SECRET": "zZokWCn+PGTeW0fNPa3mo5x0pnoBMKyZuG6gM8oY8bA=",
+        "AZURE_REDIRECT_URL": "https://agn-qa.app.dev-west.paas.mck.com/auth/openid/return",
+        "AZURE_LOGOUT_URL": "https://agn-qa.app.dev-west.paas.mck.com/logout",
+        
+        "MULE_DATA_API": "https://ws-qa-internal.mck.com/MckWebServices/qa/1.0.1/ibp/process/",
+        "MULE_API_EID": "https://ws-qa-internal.mck.com/MckWebServices/sap-hana/retrieve-eid/1.0.0/retrieveEid"
+       
+    },
+    "dev": {
+        "config_id": "development",
+        "app_name": "agn-ui-dev",
+        "client_id":"d507b538-8dfc-4165-8a94-b3d6c70f9cef",
+        "client_secret":"656d5309-17d4-4391-bd96-fe8b2b8b9874",
+        "AZURE_TENANT_ID":"da67ef1b-ca59-4db2-9a8c-aa8d94617a16",
+        "AZURE_CLIENT_ID": "55d0caf2-a6de-4e3d-a33a-59ba03921013",
+        "AZURE_CLIENT_SECRET": "zZokWCn+PGTeW0fNPa3mo5x0pnoBMKyZuG6gM8oY8bA=",
+         
+        "AZURE_REDIRECT_URL": "https://agn-ui.app.dev-west.paas.mck.com/auth/openid/return",
+        "AZURE_LOGOUT_URL": "https://agn-ui.app.dev-west.paas.mck.com/logout",
+
+        "MULE_DATA_API": "https://ws-qa-internal.mck.com/MckWebServices/1.0.1/ibp/process/",
+        "MULE_API_EID": "https://ws-prd-internal.mck.com/MckWebServices/sap-hana/retrieve-eid/1.0.0/retrieveEid"
+
+    },
+    
+    "prod": {
+        "config_id": "production",
+        "app_name": "agn-ui-prod",
+        "client_id":"a5b5321b-cc4b-4840-b7e4-09241697eb91",
+        "client_secret":"118d4819-6a3e-42cd-b10c-b1c15e223d8a",
+        "AZURE_TENANT_ID":"da67ef1b-ca59-4db2-9a8c-aa8d94617a16",
+        "AZURE_CLIENT_ID": "55d0caf2-a6de-4e3d-a33a-59ba03921013",
+        "AZURE_CLIENT_SECRET": "zZokWCn+PGTeW0fNPa3mo5x0pnoBMKyZuG6gM8oY8bA=",
+        "AZURE_REDIRECT_URL": "https://agn.platform.mck.com/auth/openid/return",
+        "AZURE_LOGOUT_URL": "https://agn.platform.mck.com/logout",
+        "MULE_DATA_API":"https://ws-prd-internal.mck.com/MckWebServices/1.0.0/1.0.2/ibp/process/",
+               
+        "MULE_API_EID": "https://ws-prd-internal.mck.com/MckWebServices/sap-hana/retrieve-eid/1.0.0/retrieveEid"
+        
+    }
+}

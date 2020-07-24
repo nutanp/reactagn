@@ -1,0 +1,49 @@
+---
+resource_types:
+  - name: npm-cache
+    type: docker-image
+    source:
+      repository: ymedlop/npm-cache-resource
+      tag: latest
+
+resources:
+  - name: agn-source-code
+    type: git
+    source: &repo-source
+      uri: https://bitbucket.mck.com:8443/scm/ibp/agn---ui.git
+      branch: qa
+  - name: dependency-cache
+    type: npm-cache
+    source:
+      <<: *repo-source
+      paths:
+        - package.json
+  - name: agn-qa
+    type: cf
+    source:
+      api: api.sys.dev-west.paas.mck.com
+      username: da7769z
+      password: Uh#ZAe0sgMDEzdR$
+      organization: corp-procuretopaysolutions
+      space: AGN-qa
+      skip_cert_check: true 
+jobs:
+  - name: Install dependencies
+    plan:
+      - get: agn-source-code
+        trigger: true
+      - get: dependency-cache
+
+  - name: agn-build-deploy
+    plan:
+      - get: agn-source-code
+        trigger: true
+        passed: [Install dependencies]
+      - get: dependency-cache
+        passed: [Install dependencies]
+      - task: build
+        file: agn-source-code/ci/tasks/build-qa.yml
+      - put: agn-qa
+        params:
+         manifest: agn-qa/manifest-qa.yaml
+         path: agn-qa
